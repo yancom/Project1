@@ -12,9 +12,8 @@ pipeline {
         echo 'Run the Scrpt'
         sh 'ls'
         sh 'pwd'
-        retry(count: 3) {
-          sh './Jenkins/build.sh'
-        }
+        sh "./Jenkins/build.sh"
+        
 
       }
     }
