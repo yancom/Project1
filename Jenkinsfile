@@ -12,7 +12,7 @@ pipeline {
         echo 'Run the Scrpt'
         sh 'ls'
         sh 'pwd'
-        catchError(buildResult: 'fail', catchInterruptions: true, message: 'dksjdhaj', stageResult: 'fail') {
+        retry(count: 3) {
           sh 'sh "./Jenkins/build.sh"'
         }
 
