@@ -6,10 +6,8 @@ pipeline {
         echo 'Start Pull from GitHub'
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo 'End Pull from GitHub'
-        
         echo "current build number: ${currentBuild.number}"
         echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
-       
       }
     }
 
@@ -21,11 +19,11 @@ pipeline {
             sh 'ls'
             sh 'pwd'
             sh './Jenkins/build.sh'
-            
+
             echo "current build number: ${currentBuild.number}"
             echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
-          
-            
+
+
           } catch(error) {
             echo "Scrip fail , let's retry if accepted"
             retry(2) {
@@ -40,10 +38,8 @@ pipeline {
     stage('PrintBuild') {
       steps {
         echo 'Print Build Number'
-        
         echo "current build number: ${currentBuild.number}"
         echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
-        
       }
     }
 
