@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  stages {
     stage('Example') {
       try {
           sh 'exit 1'
@@ -9,7 +10,7 @@ pipeline {
           throw
       }
     }
-  stages {
+   
     stage('Pull') {
       steps {
         echo 'Pull from GitHub'
