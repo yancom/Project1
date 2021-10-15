@@ -12,7 +12,6 @@ pipeline {
         echo 'Run the Scrpt'
         sh 'ls'
         sh 'pwd'
-       
       }
     }
 
