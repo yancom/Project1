@@ -22,7 +22,7 @@ pipeline {
             sh 'pwd'
             sh './Jenkins/build.sh'
 
-            
+
 
 
           } catch(error) {
