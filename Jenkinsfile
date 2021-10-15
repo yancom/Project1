@@ -12,8 +12,7 @@ pipeline {
         echo 'Run the Scrpt'
         sh 'ls'
         sh 'pwd'
-        sh 'chmod -R g+rwx /Jenkins'
-        sh './Jenkins/build.sh'
+        sh 'chmod -R g+rwx /Jenkins'       
         retry(count: 3) {
           sh 'sh "./Jenkins/build.sh"'
         }
