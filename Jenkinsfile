@@ -1,4 +1,7 @@
 
+String branchName = env.BRANCH_NAME
+String gitCredentials = "yancom"
+String repoUrl = "https://github.com/yancom/Project1.git"
 
 pipeline {
   agent any
