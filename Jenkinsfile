@@ -4,8 +4,7 @@ pipeline {
     stage('Pull') {
       steps {
         echo 'Start Pull from GitHub'
-        
-        git 'https://github.com/yancom/Project1.git'
+        git 'https://github.com/yancom/TestJenkins.git'        
         echo 'End Pull from GitHub'
       }
     }
