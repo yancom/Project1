@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Pull') {
       steps {
-        echo "before="+env.STAGE_NAME
+        echo "before=$STAGE_NAME"
         echo "current projectName: ${currentBuild.projectName}"
         echo "current description: ${currentBuild.description}"
         echo "current displayName: ${currentBuild.displayName}"
