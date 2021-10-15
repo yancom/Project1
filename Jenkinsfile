@@ -3,11 +3,14 @@ pipeline {
   stages {
     stage('Pull') {
       steps {
+          echo "current build number: ${currentBuild.number}"
+        echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
+        
+        
         echo 'Start Pull from GitHub'
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo 'End Pull from GitHub'
-        echo "current build number: ${currentBuild.number}"
-        echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
+      
       }
     }
 
