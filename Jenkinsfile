@@ -8,7 +8,7 @@ pipeline {
         sh 'ls'
         sh 'pwd'
         
-        git url: 'https://github.com/jfrogdev/project-examples.git' 'https://github.com/yancom/Project1.git'
+        git url:'https://github.com/yancom/Project1.git'
                 
       }
     }
