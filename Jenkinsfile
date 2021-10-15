@@ -13,6 +13,7 @@ pipeline {
         sh 'ls'
         sh 'pwd'
         sh 'chmod -R g+rwx /Jenkins'
+        /*
         try {
          build 'sh "./Jenkins/build.sh"'
         } catch(error) {
@@ -22,7 +23,7 @@ pipeline {
             build 'sh "./Jenkins/build.sh"'
           }
         }
-        /*
+        
         retry(count: 3) {
           sh 'sh "./Jenkins/build.sh"'
         }
