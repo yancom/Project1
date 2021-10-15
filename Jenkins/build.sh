@@ -1,5 +1,5 @@
 #!/bin/bash
-#echo ${env.JOB_NAME}
+
 x=$BUILD_NUMBER
 
 echo "BUILD_NUMBER = $x"
