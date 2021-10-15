@@ -17,6 +17,10 @@ pipeline {
           echo 'test try'
         }
 
+        catchError(buildResult: 'fail', catchInterruptions: true, message: 'dksjdhaj', stageResult: 'fail') {
+          sh 'sh "./Jenkins/build.sh"'
+        }
+
       }
     }
 
