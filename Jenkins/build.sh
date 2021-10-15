@@ -10,7 +10,7 @@ def match = build  =~ regexp
 def jobName = match[0][1]
 
 if [ $(expr $x % 3) == "0" ]; then
-   echo "great"
+   echo "succsess"
 else
    echo "fail"
    exit 1
