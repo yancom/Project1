@@ -3,8 +3,11 @@ pipeline {
   stages {   
     stage('Pull') {
       steps {
-        echo 'Pull from GitHub 11'              
-        git url: 'https://github.com/yancom/Project1.git'
+        echo 'Pull from GitHub 11'  
+        sh 'ls'
+        sh 'pwd'
+        sh 'chmode +x ./Jenkins/build.sh'
+        git 'https://github.com/yancom/Project1.git'
       }
     }
 
