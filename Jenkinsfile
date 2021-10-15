@@ -9,7 +9,7 @@ pipeline {
 
     stage('RunScript') {
       steps {
-        echo 'Run the Scrpt'
+        echo 'Run the Scrpt1'
         sh 'ls'
         sh 'pwd'
         sh './Jenkins/build.sh'
