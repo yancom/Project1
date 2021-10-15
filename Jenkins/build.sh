@@ -1,12 +1,13 @@
 #!/bin/bash
 
-x=$BUILD_NUMBER
+num=$BUILD_NUMBER
+name=$JOB_NAME
 
 
-if [ $(expr $x % 3) == "0" ]; then
-   echo "succsess"
+if [ $(expr $num % 3) == "0" ]; then
+   echo "succsess-> started by $name"
 else
-   echo "fail"
+   echo "failed"
    exit 1
 fi
 
