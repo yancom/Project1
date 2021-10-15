@@ -4,8 +4,7 @@ pipeline {
     stage('Pull') {
       steps {
         echo 'Start Pull from GitHub'
-        #sh 'ls'
-        #sh 'pwd'
+        
         git 'https://github.com/yancom/Project1.git'
         echo 'End Pull from GitHub'
       }
