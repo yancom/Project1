@@ -16,12 +16,13 @@ pipeline {
         echo 'Run the Scrpt'
         script {
           try {
+            echo "current build number: ${currentBuild.number}"
+            echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
             sh 'ls'
             sh 'pwd'
             sh './Jenkins/build.sh'
 
-            echo "current build number: ${currentBuild.number}"
-            echo "previous build number: ${currentBuild.previousBuild.getNumber()}"
+            
 
 
           } catch(error) {
