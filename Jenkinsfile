@@ -3,8 +3,8 @@ pipeline {
   stages {   
     stage('Pull') {
       steps {
-        echo 'Pull from GitHub'       
-        git 'https://github.com/yancom/Project1.git'
+        echo 'Pull from GitHub 11'              
+        git url: 'https://github.com/yancom/Project1.git'
       }
     }
 
