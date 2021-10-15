@@ -11,15 +11,17 @@ pipeline {
     stage('RunScript') {
       steps {
         echo 'Run the Scrpt'
-        try {
-          sh 'ls'
-          sh 'pwd'
-          sh './Jenkins/build.sh'
-        } catch(error) {
-          echo "Scrip fail , let's retry if accepted"
-          retry(2) {               
+        script{
+          try {
+            sh 'ls'
+            sh 'pwd'
             sh './Jenkins/build.sh'
-         }
+          } catch(error) {
+            echo "Scrip fail , let's retry if accepted"
+            retry(2) {               
+              sh './Jenkins/build.sh'
+           }
+          }
         }
       }
     }
