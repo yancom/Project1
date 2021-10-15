@@ -6,7 +6,7 @@ pipeline {
         echo "current projectName: ${currentBuild.projectName}"
         echo "current description: ${currentBuild.description}"
         echo "current displayName: ${currentBuild.displayName}"
-        echo "BUILD_NUMBER  =$BUILD_NUMBER"
+        echo "LAST_STAGE_NAME   =$LAST_STAGE_NAME "
         echo "BUILD_ID  =$BUILD_ID"
         echo "BUILD_DISPLAY_NAME  =$BUILD_DISPLAY_NAME"
         echo "JOB_NAME  =$JOB_NAME"
