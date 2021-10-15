@@ -1,6 +1,4 @@
-String branchName = env.BRANCH_NAME
-String gitCredentials = "CREDENTIAL_ID"
-String repoUrl = "https://github.com/yancom/Project1.git"
+
 
 pipeline {
   agent any
@@ -12,11 +10,15 @@ pipeline {
         #sh 'pwd'
         #sh 'chmode +x ./Jenkins/build.sh'
         #git 'https://github.com/yancom/Project1.git'
+        
+        // Clones the repository from the current branch name
+        echo 'Make the output directory'
         sh 'mkdir -p build'
 
         echo 'Cloning files from (branch: "' + branchName + '" )'
         dir('build') {
-          git branch: branchName, credentialsId: 	gitCredentials, url: repoUrl
+            git branch: branchName, credentialsId: 	gitCredentials, url: repoUrl
+        }  
         
       }
     }
