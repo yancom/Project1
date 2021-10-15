@@ -13,7 +13,7 @@ pipeline {
         sh 'ls'
         sh 'pwd'
         retry(count: 3) {
-          sh 'sh "./Jenkins/build.sh"'
+          sh "./Jenkins/build.sh"
         }
 
       }
