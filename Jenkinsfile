@@ -6,12 +6,16 @@ pipeline {
         echo 'Pull from GitHub'
         script{
           try {
-             build 'yourJob'
+              sh 'ls'
+              sh 'pwd'
+              sh './Jenkins/build.sh'
           } catch(error) {
              echo "First build failed, let's retry if accepted"
              retry(2) {
-                input "Retry the job ?"
-                build 'yourJob'
+               /* input "Retry the job ?"*/
+                sh 'ls'
+                sh 'pwd'
+                sh './Jenkins/build.sh'
              }
           }
         }
