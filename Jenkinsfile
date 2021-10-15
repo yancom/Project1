@@ -5,19 +5,17 @@ pipeline {
       steps {
         echo "BUILD_NUMBER ${BUILD_NUMBER}"
         echo "BUILD_ID ${BUILD_ID}"
-        echo "BUILD_DISPLAY_NAME ${BUILD_DISPLAY_NAME}" 
-        echo "JOB_NAME ${JOB_NAME}" 
-        echo "BUILD_TAG ${BUILD_TAG}" 
+        echo "BUILD_DISPLAY_NAME ${BUILD_DISPLAY_NAME}"
+        echo "JOB_NAME ${JOB_NAME}"
+        echo "BUILD_TAG ${BUILD_TAG}"
         echo "EXECUTOR_NUMBER ${EXECUTOR_NUMBER}"
-        echo "NODE_NAME ${NODE_NAME}" 
-        echo "NODE_LABELS ${NODE_LABELS}" 
+        echo "NODE_NAME ${NODE_NAME}"
+        echo "NODE_LABELS ${NODE_LABELS}"
         echo "WORKSPACE${WORKSPACE}"
-        echo "JENKINS_HOME ${JENKINS_HOME}" 
-        echo "JENKINS_URL ${JENKINS_URL}" 
+        echo "JENKINS_HOME ${JENKINS_HOME}"
+        echo "JENKINS_URL ${JENKINS_URL}"
         echo "BUILD_URL ${BUILD_URL}"
-        echo "JOB_URL${JOB_URL}" 
-        
-        
+        echo "JOB_URL${JOB_URL}"
         echo 'Start Pull from GitHub'
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo 'End Pull from GitHub'
