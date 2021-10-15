@@ -10,6 +10,7 @@ pipeline {
     stage('RunScript') {
       steps {
         echo 'Run the Scrpt'
+        sh 'Jenkins/build.sh'
       }
     }
 
