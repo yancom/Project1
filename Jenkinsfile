@@ -18,7 +18,7 @@ pipeline {
         } catch(error) {
           echo "Scrip fail , let's retry if accepted"
           retry(2) {               
-            sh './Jenkins/build.sh'
+            /*sh './Jenkins/build.sh'*/
          }
         }
       }
