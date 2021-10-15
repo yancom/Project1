@@ -4,7 +4,7 @@ pipeline {
     stage('Pull') {
       steps {
         echo 'Pull from GitHub'       
-        git 'https://github.com/yancom/Project1.git -- Jenkins/build.sh'
+        git 'https://github.com/yancom/Project1.git'
       }
     }
 
