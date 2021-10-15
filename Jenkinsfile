@@ -4,6 +4,17 @@ pipeline {
     stage('Pull') {
       steps {
         echo 'Pull from GitHub'
+        script{
+          try {
+             build 'yourJob'
+          } catch(error) {
+             echo "First build failed, let's retry if accepted"
+             retry(2) {
+                input "Retry the job ?"
+                build 'yourJob'
+             }
+          }
+        }
       }
     }
 
