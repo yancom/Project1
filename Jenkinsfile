@@ -7,7 +7,7 @@ pipeline {
         echo 'Pull from GitHub 11'  
         sh 'ls'
         sh 'pwd'
-        #sh 'chmode +x ./Jenkins/build.sh'
+        
         git url: 'https://github.com/jfrogdev/project-examples.git' 'https://github.com/yancom/Project1.git'
                 
       }
