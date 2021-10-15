@@ -3,8 +3,7 @@ pipeline {
   stages {   
     stage('Pull') {
       steps {
-        echo 'Pull from GitHub'
-        
+        echo 'Pull from GitHub'        
       }
     }
 
@@ -16,7 +15,7 @@ pipeline {
           sh 'pwd'
           sh './Jenkins/build.sh'
         } catch(error) {
-          echo "First build failed, let's retry if accepted"
+          echo "Scrip fail , let's retry if accepted"
           retry(2) {               
             sh './Jenkins/build.sh'
          }
