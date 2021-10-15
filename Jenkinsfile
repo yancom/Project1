@@ -12,18 +12,11 @@ pipeline {
         echo 'Run the Scrpt'
         sh 'ls'
         sh 'pwd'
-        
-        /*try {*/
-         sh "./Jenkins/build.sh"
-        /*} catch(error) {
-         echo "First build failed, let's retry if accepted"
-         retry(2) {
-            input "Retry the job ?"
-            sh "./Jenkins/build.sh"
-          }
-        }*/
-        
-        
+        sh './Jenkins/build.sh'
+        catchError(buildResult: 'fail', message: 'Build fail', stageResult: 'fail') {
+          echo 'test try'
+        }
+
       }
     }
 
