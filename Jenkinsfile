@@ -1,19 +1,6 @@
 pipeline {
   agent any
-  stages {
-    stage('Pull111') {
-      steps {
-         try {
-           echo 'exit Pull from GitHub1111'
-            sh 'exit 1'
-        }
-        catch (exc) {
-            echo 'Something failed, I should sound the klaxons!'
-            
-        }
-        
-      }
-    }
+  stages {   
     stage('Pull') {
       steps {
         echo 'Pull from GitHub'
