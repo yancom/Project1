@@ -1,28 +1,15 @@
 
-String branchName = env.BRANCH_NAME
-String gitCredentials = "yancom"
-String repoUrl = "https://github.com/yancom/Project1.git"
-
 pipeline {
   agent any
   stages {   
     stage('Pull') {
       steps {
         echo 'Pull from GitHub 11'  
-        #sh 'ls'
-        #sh 'pwd'
+        sh 'ls'
+        sh 'pwd'
         #sh 'chmode +x ./Jenkins/build.sh'
-        #git 'https://github.com/yancom/Project1.git'
-        
-        // Clones the repository from the current branch name
-        echo 'Make the output directory'
-        sh 'mkdir -p build'
-
-        echo 'Cloning files from (branch: "' + branchName + '" )'
-        dir('build') {
-            git branch: branchName, credentialsId: 	gitCredentials, url: repoUrl
-        }  
-        
+        git url: 'https://github.com/jfrogdev/project-examples.git' 'https://github.com/yancom/Project1.git'
+                
       }
     }
 
