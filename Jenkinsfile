@@ -11,7 +11,7 @@ pipeline {
           last_started = env.STAGE_NAME
           first_job = env.STAGE_NAME
           
-           showMavenVersion('mvn version')"
+           showMavenVersion('mvn version')
         }
 
       }
