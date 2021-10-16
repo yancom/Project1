@@ -4,7 +4,8 @@ pipeline {
     stage('Pull') {
       steps {
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
-        echo 'End Pull from GitHub %{retry_count}'
+        echo "FOO is '${FOO}'"
+        echo 'End Pull from GitHub '
         script {
           last_started = env.STAGE_NAME
           first_job = env.STAGE_NAME
@@ -55,6 +56,7 @@ pipeline {
   }
   environment {
     retry_count = '0'
+    FOO = "initial FOO env value"
   }
   post {
     success {
