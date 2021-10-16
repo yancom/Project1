@@ -4,7 +4,7 @@ pipeline {
     stage('Pull') {
       steps {
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
-        echo 'End Pull from GitHub %{evn.retry_count}'
+        echo 'End Pull from GitHub %{retry_count}'
         script {
           last_started = env.STAGE_NAME
           first_job = env.STAGE_NAME
