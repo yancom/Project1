@@ -6,7 +6,7 @@ pipeline {
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo 'End Pull from GitHub'
         script {
-          num_retrys = 1
+          def num_retrys = 1
           last_started = env.STAGE_NAME
         }
 
