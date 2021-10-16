@@ -28,7 +28,7 @@ pipeline {
             echo "Script fail $EXECUTOR_NUMBER out of 3 tries !!!"
             //env.EXECUTOR_NUMBER=env.EXECUTOR_NUMBER+1;
             retry(2) {
-              env.EXECUTOR_NUMBER=2
+              env.EXECUTOR_NUMBER+=1
               echo "Script fail $EXECUTOR_NUMBER out of 3 tries !!!"
               sh './Jenkins/build.sh'
             }
