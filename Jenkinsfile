@@ -28,10 +28,10 @@ pipeline {
             sh 'pwd'
             echo 'aaaa4'
             set -x //show in console
-             echo 'aaaa5'
+            echo 'aaaa5'
             sh './Jenkins/build.sh'
-             echo 'aaaa6'
-             
+            echo 'aaaa6'
+
 
           } catch(error) {
             currentBuild.result = "FAILURE"
