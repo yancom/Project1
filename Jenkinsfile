@@ -18,7 +18,7 @@ pipeline {
         echo "EXECUTOR_NUMBER  =$EXECUTOR_NUMBER"
         script {
           last_started = env.STAGE_NAME
-          num_retrys = 0
+          num_retrys = 1
           try {
             set +x //hide from console
             sh 'ls'
@@ -27,16 +27,14 @@ pipeline {
             sh './Jenkins/build.sh'
 
           } catch(error) {
+            currentBuild.result = 'FAILURE'
             echo "EXECUTOR_NUMBER22  =$EXECUTOR_NUMBER"
             echo "Scrip fail , let's retry "
             echo "retry $num_retrys of 3"
             retry(2) {
-              echo "retry"
+              echo "retry $num_retrys of 3"
+              num_retrys=$num_retrys+1
               sh './Jenkins/build.sh'
-
-              //num_retrys=$num_retrys+1
-
-              //echo "retry $num_retrys of 3"
             }
           }
         }
