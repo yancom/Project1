@@ -19,20 +19,10 @@ pipeline {
         script {
           last_started = env.STAGE_NAME
 
-          try {
-            echo 'aaaa1'
-            set +x
-            echo 'aaaa2'
-            sh 'ls'
-            echo 'aaaa3'
-            sh 'pwd'
-            echo 'aaaa4'
-            set -x
-            echo 'aaaa5'
+          try {   
+            sh 'ls'           
+            sh 'pwd'           
             sh './Jenkins/build.sh'
-            echo 'aaaa6'
-
-
           } catch(error) {
             currentBuild.result = "FAILURE"
             println("catch exeption. currentBuild.result: ${currentBuild.result}")
