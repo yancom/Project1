@@ -56,7 +56,7 @@ pipeline {
   }
   environment {
     RETRY_COUNT = '0'
-    FOO = "initial FOO env value"
+    FOO = 'initial FOO env value'
   }
   post {
     success {
