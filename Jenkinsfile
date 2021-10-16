@@ -5,6 +5,9 @@ pipeline {
       steps {        
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo 'End Pull from GitHub'
+        script {
+          last_started = env.STAGE_NAME
+        }
       }
     }
 
@@ -13,6 +16,7 @@ pipeline {
         echo 'Run the Scrpt'
         echo "EXECUTOR_NUMBER  =$EXECUTOR_NUMBER"
         script {
+          last_started = env.STAGE_NAME
           try {
 
             sh 'ls'
@@ -33,6 +37,9 @@ pipeline {
 
     stage('PrintBuild') {
       steps {
+        script {
+          last_started = env.STAGE_NAME
+        }
         echo "EXECUTOR_NUMBER  =$EXECUTOR_NUMBER"
         echo "current build number: ${currentBuild.number}"
       }
