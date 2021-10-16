@@ -30,10 +30,10 @@ pipeline {
             currentBuild.result = 'FAILURE'
             echo "EXECUTOR_NUMBER22  =$EXECUTOR_NUMBER"
             echo "Scrip fail , let's retry "
-            
+
             retry(2) {
               echo "retry ........"
-             
+
               sh './Jenkins/build.sh'
             }
           }
