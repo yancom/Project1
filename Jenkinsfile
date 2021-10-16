@@ -19,9 +19,9 @@ pipeline {
         script {
           last_started = env.STAGE_NAME
 
-          try {   
-            sh 'ls'           
-            sh 'pwd'           
+          try {
+            sh 'ls'
+            sh 'pwd'
             sh './Jenkins/build.sh'
           } catch(error) {
             currentBuild.result = "FAILURE"
