@@ -7,7 +7,7 @@ echo "This script stared by stage=$STAGE_NAME repositorie=$repo"
 
 
 if [ $(expr $num % 3) == "0" ]; then
-   echo "succsess-> started by $name"
+   echo "succsess"
 else
    echo "failed"
    exit 1
