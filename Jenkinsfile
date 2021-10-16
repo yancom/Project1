@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+        retry_count = 0
+    }
   stages {
     stage('Pull') {
       steps {
