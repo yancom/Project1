@@ -21,13 +21,13 @@ pipeline {
 
           try {
             echo 'aaaa1'
-            //set +x //hide from console
+            set +x 
             echo 'aaaa2'
             sh 'ls'
             echo 'aaaa3'
             sh 'pwd'
             echo 'aaaa4'
-            //set -x //show in console
+            set -x 
             echo 'aaaa5'
             sh './Jenkins/build.sh'
             echo 'aaaa6'
