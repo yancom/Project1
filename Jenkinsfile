@@ -41,7 +41,8 @@ pipeline {
       steps {
         script {
           last_started = env.STAGE_NAME
-        }        
+        }
+
         echo "current build number: ${currentBuild.number}"
       }
     }
