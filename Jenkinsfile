@@ -3,14 +3,12 @@ pipeline {
   stages {
     stage('Pull') {
       steps {
-        git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
-        echo "FOO is '${RETRY_COUNT}'"
+        git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)      
         echo 'End Pull from GitHub '
         script {
           last_started = env.STAGE_NAME
           first_job = env.STAGE_NAME
         }
-
       }
     }
 
@@ -29,12 +27,12 @@ pipeline {
             echo "Script fail $EXECUTOR_NUMBER out of 3 tries !!!"
             //env.EXECUTOR_NUMBER=env.EXECUTOR_NUMBER+1;
             retry(2) {
+              env.EXECUTOR_NUMBER=2
               echo "Script fail $EXECUTOR_NUMBER out of 3 tries !!!"
               sh './Jenkins/build.sh'
             }
           }
         }
-
       }
     }
 
@@ -48,11 +46,8 @@ pipeline {
         echo "current build number: ${currentBuild.number}"
       }
     }
-
   }
-  environment {
-    RETRY_COUNT = '0'
-  }
+  
   post {
     success {
       echo "the first stage was $first_job"
@@ -62,7 +57,6 @@ pipeline {
       script {
         echo "Failed stage names $last_started"
       }
-
     }
 
   }
