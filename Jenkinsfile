@@ -31,11 +31,12 @@ pipeline {
             echo "Scrip fail , let's retry "
             echo "retry $num_retrys of 3"
             retry(2) {
+              echo "retry"
               sh './Jenkins/build.sh'
 
               //num_retrys=$num_retrys+1
 
-              echo "retry $num_retrys of 3"
+              //echo "retry $num_retrys of 3"
             }
           }
         }
