@@ -35,7 +35,7 @@ pipeline {
 
               //num_retrys=$num_retrys+1
 
-              //echo "retry $num_retrys of 3"
+              echo "retry $num_retrys of 3"
             }
           }
         }
