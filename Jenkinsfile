@@ -27,7 +27,8 @@ pipeline {
             sh './Jenkins/build.sh'
 
           } catch(error) {
-            currentBuild.result = 'FAILURE'
+            currentBuild.result = "FAILURE"
+            println("catch exeption. currentBuild.result: ${currentBuild.result}")
             echo "EXECUTOR_NUMBER22  =$EXECUTOR_NUMBER"
             echo "Scrip fail , let's retry "
 
