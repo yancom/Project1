@@ -33,9 +33,9 @@ pipeline {
             retry(2) {
               sh './Jenkins/build.sh'
 
-              num_retrys=$num_retrys+1
+              //num_retrys=$num_retrys+1
 
-              echo "retry $num_retrys of 3"
+              //echo "retry $num_retrys of 3"
             }
           }
         }
