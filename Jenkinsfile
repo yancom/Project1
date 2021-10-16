@@ -2,12 +2,13 @@ pipeline {
   agent any
   stages {
     stage('Pull') {
-      steps {        
+      steps {
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo 'End Pull from GitHub'
         script {
           last_started = env.STAGE_NAME
         }
+
       }
     }
 
@@ -40,6 +41,7 @@ pipeline {
         script {
           last_started = env.STAGE_NAME
         }
+
         echo "EXECUTOR_NUMBER  =$EXECUTOR_NUMBER"
         echo "current build number: ${currentBuild.number}"
       }
