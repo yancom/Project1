@@ -5,6 +5,7 @@ pipeline {
       steps {
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo "FOO is '${RETRY_COUNT}'"
+        echo "FOO is '${RETRY_COUNT}+1'"
         echo 'End Pull from GitHub '
         script {
           last_started = env.STAGE_NAME
