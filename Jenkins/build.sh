@@ -1,9 +1,9 @@
 #!/bin/bash
 
 num=$BUILD_NUMBER
-name=$JOB_NAME
+repo=${JOB_NAME%%/*}
 
-echo "This script stared by stage=$STAGE_NAME job=${JOB_NAME%%/*}"
+echo "This script stared by stage=$STAGE_NAME repositorie=repo"
 
 
 if [ $(expr $num % 3) == "0" ]; then
