@@ -1,5 +1,7 @@
+def port = 1000
+
 pipeline {
-  def retry_time=0
+ 
   agent any
   stages {
     stage('Pull') {
