@@ -3,6 +3,7 @@ pipeline {
   stages {
     stage('Pull') {
       steps {
+        echo "JOB_BASE_NAME = $JOB_BASE_NAME"
         echo "before=$STAGE_NAME"
         echo "current projectName: ${currentBuild.projectName}"
         echo "current description: ${currentBuild.description}"
@@ -35,9 +36,6 @@ pipeline {
             sh 'ls'
             sh 'pwd'
             sh './Jenkins/build.sh'
-
-
-
 
           } catch(error) {
             echo "EXECUTOR_NUMBER22  =$EXECUTOR_NUMBER"
