@@ -3,12 +3,13 @@ pipeline {
   stages {
     stage('Pull') {
       steps {
-        git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)      
+        git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo 'End Pull from GitHub '
         script {
           last_started = env.STAGE_NAME
           first_job = env.STAGE_NAME
         }
+
       }
     }
 
@@ -33,6 +34,7 @@ pipeline {
             }
           }
         }
+
       }
     }
 
@@ -46,8 +48,8 @@ pipeline {
         echo "current build number: ${currentBuild.number}"
       }
     }
+
   }
-  
   post {
     success {
       echo "the first stage was $first_job"
@@ -57,6 +59,7 @@ pipeline {
       script {
         echo "Failed stage names $last_started"
       }
+
     }
 
   }
