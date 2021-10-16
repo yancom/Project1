@@ -29,7 +29,7 @@ pipeline {
 
             echo "Scrip fail , let's retry "
             echo "Script fail $EXECUTOR_NUMBER out of 3 tries !!!"
-            $EXECUTOR_NUMBER=$EXECUTOR_NUMBER+1;
+            ${EXECUTOR_NUMBER}=${EXECUTOR_NUMBER}+1;
             retry(2) {
               echo "retry ........"
               sh './Jenkins/build.sh'
