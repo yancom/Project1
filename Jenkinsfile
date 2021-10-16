@@ -5,13 +5,12 @@ pipeline {
       steps {
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo "FOO is '${RETRY_COUNT}'"
-       
         echo 'End Pull from GitHub '
         script {
           last_started = env.STAGE_NAME
           first_job = env.STAGE_NAME
-          
-           showMavenVersion('mvn version')
+
+          showMavenVersion('mvn version')
         }
 
       }
@@ -75,11 +74,3 @@ pipeline {
 
   }
 }
-
-
-def showMavenVersion(String a) {
-        
-        echo a
-}
-    
-
