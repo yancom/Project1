@@ -24,12 +24,12 @@ pipeline {
             sh 'pwd'
             sh './Jenkins/build.sh'
           } catch(error) {
-            echo "Scrip fail , let's retry ... "            
-            
-            retry(2) {             
-              echo "Scrip fail , let's retry ... " 
+            echo "Scrip fail , let's retry ... "
+
+            retry(2) {
+              echo "Scrip fail , let's retry ... "
               sh './Jenkins/build.sh'
-              echo "cccc , let's retry ... " 
+              echo "cccc , let's retry ... "
             }
           }
         }
