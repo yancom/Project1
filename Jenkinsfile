@@ -10,6 +10,7 @@ pipeline {
           last_started = env.STAGE_NAME
           first_job = env.STAGE_NAME
         }
+
       }
     }
 
@@ -42,10 +43,12 @@ pipeline {
         script {
           last_started = env.STAGE_NAME
         }
+
         echo "EXECUTOR_NUMBER =$EXECUTOR_NUMBER"
         echo "current build number: ${currentBuild.number}"
       }
     }
+
   }
   environment {
     RETRY_COUNT = '0'
