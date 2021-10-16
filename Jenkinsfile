@@ -59,13 +59,13 @@ pipeline {
     }
 
   }
-  
-   post {
-        failure {
-            script {     
-              echo "Failed stage names"
-               
-            }
-        }
+  post {
+    failure {
+      script {
+        echo "Failed stage names"
+      }
+
     }
+
+  }
 }
