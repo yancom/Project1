@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  environment {
-    retry_count = '0'
-  }
   stages {
     stage('Pull') {
       steps {
@@ -56,7 +53,9 @@ pipeline {
     }
 
   }
- 
+  environment {
+    retry_count = '0'
+  }
   post {
     success {
       echo "the first stage was $first_job"
