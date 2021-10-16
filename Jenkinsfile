@@ -24,13 +24,12 @@ pipeline {
             sh 'pwd'
             sh './Jenkins/build.sh'
           } catch(error) {
-            echo "Scrip fail , let's retry "
-            echo "Script fail $EXECUTOR_NUMBER out of 3 tries !!!"
-            //env.EXECUTOR_NUMBER=env.EXECUTOR_NUMBER+1;
-            retry(2) {
-              env.EXECUTOR_NUMBER+=1
-              echo "Script fail $EXECUTOR_NUMBER out of 3 tries !!!"
+            echo "Scrip fail , let's retry ... "            
+            
+            retry(2) {             
+              echo "Scrip fail , let's retry ... " 
               sh './Jenkins/build.sh'
+              echo "cccc , let's retry ... " 
             }
           }
         }
