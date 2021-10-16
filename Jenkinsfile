@@ -24,7 +24,7 @@ pipeline {
             sh 'ls'
             sh 'pwd'
             set -x //show in console
-            sh './Jenkins/build.sh'            
+            sh './Jenkins/build.sh'
 
           } catch(error) {
             echo "EXECUTOR_NUMBER22  =$EXECUTOR_NUMBER"
@@ -32,9 +32,9 @@ pipeline {
             echo "retry $num_retrys of 3"
             retry(2) {
               sh './Jenkins/build.sh'
-              
+
               num_retrys=$num_retrys+1
-              
+
               echo "retry $num_retrys of 3"
             }
           }
