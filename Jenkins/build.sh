@@ -13,7 +13,7 @@ else
    exit 1
 fi
 
-true
+exit 0
 
 
 
