@@ -1,7 +1,7 @@
 pipeline {
   agent any
   stages {
-    stage('Poll') {
+    stage('Pull') {
       steps {
         echo "STAGE_NAME = $STAGE_NAME"
         echo "before=$STAGE_NAME"
@@ -20,7 +20,7 @@ pipeline {
         echo "JENKINS_URL  =$JENKINS_URL"
         echo "BUILD_URL  =$BUILD_URL"
         echo "JOB_URL =$JOB_URL"
-        echo 'Start Poll from GitHub'
+        echo 'Start Pull from GitHub'
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo 'End Pull from GitHub'
       }
