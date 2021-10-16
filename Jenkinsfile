@@ -1,3 +1,7 @@
+// a.groovy
+import groovy.transform.Field
+
+def last_started = 0
 pipeline {
   agent any
   stages {
@@ -5,8 +9,7 @@ pipeline {
       steps {
         git(url: 'https://github.com/yancom/Project1.git', branch: 'main', poll: true)
         echo 'End Pull from GitHub'
-        script {
-          def num_retrys = 1
+        script {         
           last_started = env.STAGE_NAME
         }
 
