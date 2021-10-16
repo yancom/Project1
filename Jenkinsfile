@@ -10,6 +10,7 @@ pipeline {
           last_started = env.STAGE_NAME
           first_job = env.STAGE_NAME
         }
+
       }
     }
 
@@ -24,8 +25,8 @@ pipeline {
             sh 'ls'
             sh 'pwd'
             sh './Jenkins/build.sh'
-          } catch(error) {           
-            
+          } catch(error) {
+
             echo "Scrip fail , let's retry "
             echo "Script fail $EXECUTOR_NUMBER out of 3 tries !!!"
             $EXECUTOR_NUMBER=$EXECUTOR_NUMBER+1;
@@ -53,7 +54,6 @@ pipeline {
   }
   environment {
     RETRY_COUNT = '0'
-    FOO = 'initial FOO env value'
   }
   post {
     success {
