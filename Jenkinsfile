@@ -25,6 +25,8 @@ pipeline {
             sh 'pwd'
             set -x //show in console
             sh './Jenkins/build.sh'
+            
+             echo 'aaaa'
 
           } catch(error) {
             currentBuild.result = "FAILURE"
