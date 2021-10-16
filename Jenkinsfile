@@ -18,15 +18,18 @@ pipeline {
         echo "EXECUTOR_NUMBER  =$EXECUTOR_NUMBER"
         script {
           last_started = env.STAGE_NAME
+          num_retrys = 0
           try {
-
+            set +x //hide from console
             sh 'ls'
             sh 'pwd'
+            set -x //show in console
             sh './Jenkins/build.sh'
+            num_retrys=$num_retrys+1
 
           } catch(error) {
             echo "EXECUTOR_NUMBER22  =$EXECUTOR_NUMBER"
-            echo "Scrip fail , let's retry if accepted"
+            echo "Scrip fail , let's retry if accepted $num_retrys"
             retry(2) {
               sh './Jenkins/build.sh'
             }
