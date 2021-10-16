@@ -19,7 +19,7 @@ pipeline {
         echo "EXECUTOR_NUMBER  =$EXECUTOR_NUMBER"
         script {
           last_started = env.STAGE_NAME
-          
+
           try {
             set +x //hide from console
             sh 'ls'
