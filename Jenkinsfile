@@ -1,4 +1,5 @@
 pipeline {
+  def retry_time=0
   agent any
   stages {
     stage('Pull') {
@@ -7,6 +8,7 @@ pipeline {
         echo 'End Pull from GitHub'
         script {
           last_started = env.STAGE_NAME
+          first_job = env.STAGE_NAME
         }
 
       }
@@ -54,7 +56,7 @@ pipeline {
   }
   post {
     success {
-      echo "last_started: $last_started"
+      echo "the first stage was $first_job"
     }
 
     failure {
