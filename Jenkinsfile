@@ -54,7 +54,7 @@ pipeline {
 
   }
   environment {
-    retry_count = 0
+    retry_count = '0'
   }
   post {
     success {
