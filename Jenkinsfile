@@ -16,7 +16,6 @@ pipeline {
     stage('RunScript') {
       steps {
         echo 'Run the Scrpt'
-        
         script {
           last_started = env.STAGE_NAME
           try {
