@@ -59,4 +59,13 @@ pipeline {
     }
 
   }
+  
+   post {
+        failure {
+            script {     
+              echo "Failed stage names"
+               
+            }
+        }
+    }
 }
