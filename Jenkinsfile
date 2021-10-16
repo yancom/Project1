@@ -49,9 +49,14 @@ pipeline {
 
   }
   post {
+    success {
+			
+			echo "last_started: $last_started"
+		
+		}
     failure {
       script {
-        echo "Failed stage names"
+        echo "Failed stage names $last_started"
       }
 
     }
