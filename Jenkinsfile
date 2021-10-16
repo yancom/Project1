@@ -16,7 +16,7 @@ pipeline {
     stage('RunScript') {
       steps {
         echo 'Run the Scrpt'
-        echo "EXECUTOR_NUMBER =$EXECUTOR_NUMBER"
+        
         script {
           last_started = env.STAGE_NAME
           try {
